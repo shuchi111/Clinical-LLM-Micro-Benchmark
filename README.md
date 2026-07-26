@@ -41,4 +41,4 @@ python -m harness save --item D1 --provider openai_website --model-name "GPT-4o"
 - `REPORT.md` - write-up + transcript appendix
 - `gold/` - labels + labeling protocol
 - `outputs/raw/` - verbatim prompts/responses
-- **Do not commit** `doc/` or `.env`
+
