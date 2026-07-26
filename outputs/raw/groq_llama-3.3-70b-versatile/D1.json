@@ -1,0 +1,24 @@
+{
+  "model_id": "groq_llama-3.3-70b-versatile",
+  "provider": "groq",
+  "interface": "api",
+  "model_name_requested": "llama-3.3-70b-versatile",
+  "model_name": "llama-3.3-70b-versatile",
+  "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+  "item_id": "D1",
+  "patient_id": "P0006",
+  "visit_id": "V00073",
+  "system_prompt": "You are a clinical information extraction assistant.\nExtract diagnoses/conditions that are AFFIRMATIVELY present from the raw_diagnosis token list.\nRules:\n- Expand common clinical abbreviations to clear English labels.\n- Do NOT invent conditions that are not supported by the tokens.\n- Ignore duration-only fragments (e.g. \"24 years\").\n- Honor negation: tokens like \"no X\" mean X is NOT present.\n- Output JSON only, with this schema:\n{\"conditions\":[{\"name\":\"<label>\",\"evidence_token\":\"<exact token from input>\"}]}\n- Deduplicate. No prose outside JSON.",
+  "user_prompt": "Patient ID: P0006\nVisit ID: V00073\n\nraw_diagnosis tokens:\n[\n  \"hypertension\",\n  \"pacemaker implanted\",\n  \"bph\",\n  \"ckd\",\n  \"type 2 dm\",\n  \"atrial fibrillation\"\n]\n\nExtract affirmative conditions as JSON.",
+  "raw_response": "{\"conditions\":[\n  {\"name\":\"Hypertension\",\"evidence_token\":\"hypertension\"},\n  {\"name\":\"Pacemaker Implanted\",\"evidence_token\":\"pacemaker implanted\"},\n  {\"name\":\"Benign Prostatic Hyperplasia\",\"evidence_token\":\"bph\"},\n  {\"name\":\"Chronic Kidney Disease\",\"evidence_token\":\"ckd\"},\n  {\"name\":\"Type 2 Diabetes Mellitus\",\"evidence_token\":\"type 2 dm\"},\n  {\"name\":\"Atrial Fibrillation\",\"evidence_token\":\"atrial fibrillation\"}\n]}",
+  "api_response_id": "chatcmpl-f6a6192c-722a-4ff0-9811-b7d1880ea218",
+  "usage": {
+    "queue_time": 0.161905621,
+    "prompt_tokens": 221,
+    "prompt_time": 0.010980245,
+    "completion_tokens": 116,
+    "completion_time": 0.202502205,
+    "total_tokens": 337,
+    "total_time": 0.21348245
+  }
+}

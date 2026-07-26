@@ -1,0 +1,24 @@
+{
+  "model_id": "zai_glm-5.1",
+  "provider": "zai",
+  "interface": "api",
+  "model_name_requested": "glm-5.1",
+  "model_name": "glm-5.2",
+  "endpoint": "https://api.z.ai/api/anthropic/v1/messages",
+  "item_id": "D2",
+  "patient_id": "P0003",
+  "visit_id": "V00028",
+  "system_prompt": "You are a clinical information extraction assistant.\nExtract diagnoses/conditions that are AFFIRMATIVELY present from the raw_diagnosis token list.\nRules:\n- Expand common clinical abbreviations to clear English labels.\n- Do NOT invent conditions that are not supported by the tokens.\n- Ignore duration-only fragments (e.g. \"24 years\").\n- Honor negation: tokens like \"no X\" mean X is NOT present.\n- Output JSON only, with this schema:\n{\"conditions\":[{\"name\":\"<label>\",\"evidence_token\":\"<exact token from input>\"}]}\n- Deduplicate. No prose outside JSON.",
+  "user_prompt": "Patient ID: P0003\nVisit ID: V00028\n\nraw_diagnosis tokens:\n[\n  \"type 2 dm\",\n  \"24 years\",\n  \"cad post cabg\",\n  \"cad post cabg\",\n  \"hypertension\"\n]\n\nExtract affirmative conditions as JSON.",
+  "raw_response": "{\"conditions\":[{\"name\":\"type 2 diabetes mellitus\",\"evidence_token\":\"type 2 dm\"},{\"name\":\"coronary artery disease post coronary artery bypass graft\",\"evidence_token\":\"cad post cabg\"},{\"name\":\"hypertension\",\"evidence_token\":\"hypertension\"}]}",
+  "api_response_id": "msg_202607270533516d2a98838fa04f3d",
+  "usage": {
+    "input_tokens": 189,
+    "output_tokens": 59,
+    "cache_read_input_tokens": 0,
+    "server_tool_use": {
+      "web_search_requests": 0
+    },
+    "service_tier": "standard"
+  }
+}

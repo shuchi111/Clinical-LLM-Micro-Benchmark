@@ -1,0 +1,138 @@
+{
+  "task": "diagnosis_extraction_from_raw_diagnosis",
+  "version": "1.0",
+  "items": [
+    {
+      "item_id": "D1",
+      "patient_id": "P0006",
+      "visit_id": "V00073",
+      "raw_diagnosis": [
+        "hypertension",
+        "pacemaker implanted",
+        "bph",
+        "ckd",
+        "type 2 dm",
+        "atrial fibrillation"
+      ],
+      "gold_conditions": [
+        {
+          "canonical_id": "hypertension",
+          "label": "hypertension",
+          "aliases": ["htn", "ht", "high blood pressure", "essential hypertension"]
+        },
+        {
+          "canonical_id": "pacemaker_implanted",
+          "label": "pacemaker implanted",
+          "aliases": ["pacemaker", "pacemaker in situ", "permanent pacemaker", "ppm"]
+        },
+        {
+          "canonical_id": "bph",
+          "label": "benign prostatic hyperplasia",
+          "aliases": ["bph", "benign prostatic hypertrophy", "prostatic hyperplasia"]
+        },
+        {
+          "canonical_id": "ckd",
+          "label": "chronic kidney disease",
+          "aliases": ["ckd", "chronic renal disease", "chronic renal failure", "crf"]
+        },
+        {
+          "canonical_id": "t2dm",
+          "label": "diabetes mellitus type 2",
+          "aliases": ["type 2 dm", "type 2 diabetes", "type ii diabetes", "dm2", "t2dm", "niddm", "diabetes mellitus type ii"]
+        },
+        {
+          "canonical_id": "atrial_fibrillation",
+          "label": "atrial fibrillation",
+          "aliases": ["af", "afib", "a fib", "atrial fib"]
+        }
+      ],
+      "explicitly_absent_or_excluded": [],
+      "notes": "Structured diagnoses omit pacemaker implanted; gold keeps it because it is affirmative in raw_diagnosis."
+    },
+    {
+      "item_id": "D2",
+      "patient_id": "P0003",
+      "visit_id": "V00028",
+      "raw_diagnosis": [
+        "type 2 dm",
+        "24 years",
+        "cad post cabg",
+        "cad post cabg",
+        "hypertension"
+      ],
+      "gold_conditions": [
+        {
+          "canonical_id": "t2dm",
+          "label": "diabetes mellitus type 2",
+          "aliases": ["type 2 dm", "type 2 diabetes", "type ii diabetes", "dm2", "t2dm", "niddm", "diabetes mellitus type ii"]
+        },
+        {
+          "canonical_id": "cad",
+          "label": "coronary artery disease",
+          "aliases": ["cad", "coronary heart disease", "chd", "ischemic heart disease", "ischaemic heart disease", "ihd"]
+        },
+        {
+          "canonical_id": "post_cabg",
+          "label": "post coronary artery bypass graft",
+          "aliases": ["post cabg", "cabg", "coronary artery bypass graft", "coronary artery bypass grafting", "status post cabg", "s/p cabg"]
+        },
+        {
+          "canonical_id": "hypertension",
+          "label": "hypertension",
+          "aliases": ["htn", "ht", "high blood pressure", "essential hypertension"]
+        }
+      ],
+      "explicitly_absent_or_excluded": [
+        {
+          "token": "24 years",
+          "reason": "Duration fragment, not a diagnosis."
+        }
+      ],
+      "notes": "Duplicate 'cad post cabg' counted once; yields both CAD and post-CABG status."
+    },
+    {
+      "item_id": "D3",
+      "patient_id": "P0010",
+      "visit_id": "V00147",
+      "raw_diagnosis": [
+        "dm2",
+        "coryza",
+        "no vaccination",
+        "hlp",
+        "no neuropathy"
+      ],
+      "gold_conditions": [
+        {
+          "canonical_id": "t2dm",
+          "label": "diabetes mellitus type 2",
+          "aliases": ["type 2 dm", "type 2 diabetes", "type ii diabetes", "dm2", "t2dm", "niddm", "diabetes mellitus type ii"]
+        },
+        {
+          "canonical_id": "coryza",
+          "label": "coryza",
+          "aliases": ["common cold", "acute coryza", "rhinitis"]
+        },
+        {
+          "canonical_id": "hyperlipidemia",
+          "label": "hyperlipidemia",
+          "aliases": ["hlp", "dyslipidemia", "dyslipidaemia", "hyperlipidaemia", "high cholesterol", "hypercholesterolemia", "hypercholesterolaemia"]
+        }
+      ],
+      "explicitly_absent_or_excluded": [
+        {
+          "token": "no neuropathy",
+          "reason": "Negated; neuropathy must NOT be extracted."
+        },
+        {
+          "token": "no vaccination",
+          "reason": "Vaccination status negation, not a disease condition for this task."
+        },
+        {
+          "token": "hlp_wrong_sense",
+          "reason": "Must NOT map hlp to hyperkeratosis lenticularis perstans (structured-field error)."
+        }
+      ],
+      "notes": "Critical item: correct HLP sense + negation. Structured field fails both."
+    }
+  ]
+}

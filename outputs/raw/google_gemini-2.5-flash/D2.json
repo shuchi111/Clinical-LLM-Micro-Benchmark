@@ -1,0 +1,28 @@
+{
+  "model_id": "google_gemini-2.5-flash",
+  "provider": "google",
+  "interface": "api",
+  "model_name_requested": "gemini-2.5-flash",
+  "model_name": "gemini-2.5-flash",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+  "item_id": "D2",
+  "patient_id": "P0003",
+  "visit_id": "V00028",
+  "system_prompt": "You are a clinical information extraction assistant.\nExtract diagnoses/conditions that are AFFIRMATIVELY present from the raw_diagnosis token list.\nRules:\n- Expand common clinical abbreviations to clear English labels.\n- Do NOT invent conditions that are not supported by the tokens.\n- Ignore duration-only fragments (e.g. \"24 years\").\n- Honor negation: tokens like \"no X\" mean X is NOT present.\n- Output JSON only, with this schema:\n{\"conditions\":[{\"name\":\"<label>\",\"evidence_token\":\"<exact token from input>\"}]}\n- Deduplicate. No prose outside JSON.",
+  "user_prompt": "Patient ID: P0003\nVisit ID: V00028\n\nraw_diagnosis tokens:\n[\n  \"type 2 dm\",\n  \"24 years\",\n  \"cad post cabg\",\n  \"cad post cabg\",\n  \"hypertension\"\n]\n\nExtract affirmative conditions as JSON.",
+  "raw_response": "```json\n{\n  \"conditions\": [\n    {\n      \"name\": \"Type 2 Diabetes Mellitus\",\n      \"evidence_token\": \"type 2 dm\"\n    },\n    {\n      \"name\": \"Coronary Artery Disease post Coronary Artery Bypass Graft\",\n      \"evidence_token\": \"cad post cabg\"\n    },\n    {\n      \"name\": \"Hypertension\",\n      \"evidence_token\": \"hypertension\"\n    }\n  ]\n}\n```",
+  "api_response_id": null,
+  "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 114,
+    "totalTokenCount": 721,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 205
+      }
+    ],
+    "thoughtsTokenCount": 402,
+    "serviceTier": "standard"
+  }
+}

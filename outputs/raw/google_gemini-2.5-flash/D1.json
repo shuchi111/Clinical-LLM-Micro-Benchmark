@@ -1,0 +1,28 @@
+{
+  "model_id": "google_gemini-2.5-flash",
+  "provider": "google",
+  "interface": "api",
+  "model_name_requested": "gemini-2.5-flash",
+  "model_name": "gemini-2.5-flash",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+  "item_id": "D1",
+  "patient_id": "P0006",
+  "visit_id": "V00073",
+  "system_prompt": "You are a clinical information extraction assistant.\nExtract diagnoses/conditions that are AFFIRMATIVELY present from the raw_diagnosis token list.\nRules:\n- Expand common clinical abbreviations to clear English labels.\n- Do NOT invent conditions that are not supported by the tokens.\n- Ignore duration-only fragments (e.g. \"24 years\").\n- Honor negation: tokens like \"no X\" mean X is NOT present.\n- Output JSON only, with this schema:\n{\"conditions\":[{\"name\":\"<label>\",\"evidence_token\":\"<exact token from input>\"}]}\n- Deduplicate. No prose outside JSON.",
+  "user_prompt": "Patient ID: P0006\nVisit ID: V00073\n\nraw_diagnosis tokens:\n[\n  \"hypertension\",\n  \"pacemaker implanted\",\n  \"bph\",\n  \"ckd\",\n  \"type 2 dm\",\n  \"atrial fibrillation\"\n]\n\nExtract affirmative conditions as JSON.",
+  "raw_response": "```json\n{\n  \"conditions\": [\n    {\n      \"name\": \"Hypertension\",\n      \"evidence_token\": \"hypertension\"\n    },\n    {\n      \"name\": \"Pacemaker implanted\",\n      \"evidence_token\": \"pacemaker implanted\"\n    },\n    {\n      \"name\": \"Benign Prostatic Hyperplasia\",\n      \"evidence_token\": \"bph\"\n    },\n    {\n      \"name\": \"Chronic Kidney Disease\",\n      \"evidence_token\": \"ckd\"\n    },\n    {\n      \"name\": \"Type 2 Diabetes Mellitus\",\n      \"evidence_token\": \"type 2 dm\"\n    },\n    {\n      \"name\": \"Atrial Fibrillation\",\n      \"evidence_token\": \"atrial fibrillation\"\n    }\n  ]\n}\n```",
+  "api_response_id": null,
+  "usage": {
+    "promptTokenCount": 208,
+    "candidatesTokenCount": 190,
+    "totalTokenCount": 563,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 208
+      }
+    ],
+    "thoughtsTokenCount": 165,
+    "serviceTier": "standard"
+  }
+}

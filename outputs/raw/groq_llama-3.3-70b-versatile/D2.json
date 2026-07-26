@@ -1,0 +1,24 @@
+{
+  "model_id": "groq_llama-3.3-70b-versatile",
+  "provider": "groq",
+  "interface": "api",
+  "model_name_requested": "llama-3.3-70b-versatile",
+  "model_name": "llama-3.3-70b-versatile",
+  "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+  "item_id": "D2",
+  "patient_id": "P0003",
+  "visit_id": "V00028",
+  "system_prompt": "You are a clinical information extraction assistant.\nExtract diagnoses/conditions that are AFFIRMATIVELY present from the raw_diagnosis token list.\nRules:\n- Expand common clinical abbreviations to clear English labels.\n- Do NOT invent conditions that are not supported by the tokens.\n- Ignore duration-only fragments (e.g. \"24 years\").\n- Honor negation: tokens like \"no X\" mean X is NOT present.\n- Output JSON only, with this schema:\n{\"conditions\":[{\"name\":\"<label>\",\"evidence_token\":\"<exact token from input>\"}]}\n- Deduplicate. No prose outside JSON.",
+  "user_prompt": "Patient ID: P0003\nVisit ID: V00028\n\nraw_diagnosis tokens:\n[\n  \"type 2 dm\",\n  \"24 years\",\n  \"cad post cabg\",\n  \"cad post cabg\",\n  \"hypertension\"\n]\n\nExtract affirmative conditions as JSON.",
+  "raw_response": "{\"conditions\":[{\"name\":\"Type 2 Diabetes Mellitus\",\"evidence_token\":\"type 2 dm\"},{\"name\":\"Coronary Artery Disease\",\"evidence_token\":\"cad post cabg\"},{\"name\":\"Hypertension\",\"evidence_token\":\"hypertension\"}]}",
+  "api_response_id": "chatcmpl-41e7521a-106d-48eb-a4ca-1e152dd70369",
+  "usage": {
+    "queue_time": 0.051508405,
+    "prompt_tokens": 217,
+    "prompt_time": 0.010596414,
+    "completion_tokens": 56,
+    "completion_time": 0.112382624,
+    "total_tokens": 273,
+    "total_time": 0.122979038
+  }
+}

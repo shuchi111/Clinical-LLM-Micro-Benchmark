@@ -1,0 +1,40 @@
+{
+  "data_path_used": "E:\\Learning\\AI\\PW-assignment\\Clinical LLM Micro-Benchmark\\doc\\patients_sample_3 (1).json",
+  "system_prompt": "You are a clinical information extraction assistant.\nExtract diagnoses/conditions that are AFFIRMATIVELY present from the raw_diagnosis token list.\nRules:\n- Expand common clinical abbreviations to clear English labels.\n- Do NOT invent conditions that are not supported by the tokens.\n- Ignore duration-only fragments (e.g. \"24 years\").\n- Honor negation: tokens like \"no X\" mean X is NOT present.\n- Output JSON only, with this schema:\n{\"conditions\":[{\"name\":\"<label>\",\"evidence_token\":\"<exact token from input>\"}]}\n- Deduplicate. No prose outside JSON.",
+  "items": [
+    {
+      "item_id": "D1",
+      "prompt_file": "outputs\\prompts\\D1_P0006_V00073.json",
+      "raw_diagnosis": [
+        "hypertension",
+        "pacemaker implanted",
+        "bph",
+        "ckd",
+        "type 2 dm",
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "item_id": "D2",
+      "prompt_file": "outputs\\prompts\\D2_P0003_V00028.json",
+      "raw_diagnosis": [
+        "type 2 dm",
+        "24 years",
+        "cad post cabg",
+        "cad post cabg",
+        "hypertension"
+      ]
+    },
+    {
+      "item_id": "D3",
+      "prompt_file": "outputs\\prompts\\D3_P0010_V00147.json",
+      "raw_diagnosis": [
+        "dm2",
+        "coryza",
+        "no vaccination",
+        "hlp",
+        "no neuropathy"
+      ]
+    }
+  ]
+}

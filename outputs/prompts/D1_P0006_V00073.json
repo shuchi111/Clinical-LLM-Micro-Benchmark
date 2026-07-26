@@ -1,0 +1,15 @@
+{
+  "item_id": "D1",
+  "patient_id": "P0006",
+  "visit_id": "V00073",
+  "system_prompt": "You are a clinical information extraction assistant.\nExtract diagnoses/conditions that are AFFIRMATIVELY present from the raw_diagnosis token list.\nRules:\n- Expand common clinical abbreviations to clear English labels.\n- Do NOT invent conditions that are not supported by the tokens.\n- Ignore duration-only fragments (e.g. \"24 years\").\n- Honor negation: tokens like \"no X\" mean X is NOT present.\n- Output JSON only, with this schema:\n{\"conditions\":[{\"name\":\"<label>\",\"evidence_token\":\"<exact token from input>\"}]}\n- Deduplicate. No prose outside JSON.",
+  "user_prompt": "Patient ID: P0006\nVisit ID: V00073\n\nraw_diagnosis tokens:\n[\n  \"hypertension\",\n  \"pacemaker implanted\",\n  \"bph\",\n  \"ckd\",\n  \"type 2 dm\",\n  \"atrial fibrillation\"\n]\n\nExtract affirmative conditions as JSON.",
+  "raw_diagnosis_from_record": [
+    "hypertension",
+    "pacemaker implanted",
+    "bph",
+    "ckd",
+    "type 2 dm",
+    "atrial fibrillation"
+  ]
+}

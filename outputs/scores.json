@@ -1,0 +1,347 @@
+{
+  "models": {
+    "google_gemini-2.5-flash": {
+      "items": {
+        "D1": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "matched": [
+            {
+              "pred": "Hypertension",
+              "gold": "hypertension"
+            },
+            {
+              "pred": "Pacemaker implanted",
+              "gold": "pacemaker_implanted"
+            },
+            {
+              "pred": "Benign Prostatic Hyperplasia",
+              "gold": "bph"
+            },
+            {
+              "pred": "Chronic Kidney Disease",
+              "gold": "ckd"
+            },
+            {
+              "pred": "Type 2 Diabetes Mellitus",
+              "gold": "t2dm"
+            },
+            {
+              "pred": "Atrial Fibrillation",
+              "gold": "atrial_fibrillation"
+            }
+          ],
+          "unmatched_preds": [],
+          "missed_gold": [],
+          "critical_flags": [],
+          "parsed_conditions": [
+            "Hypertension",
+            "Pacemaker implanted",
+            "Benign Prostatic Hyperplasia",
+            "Chronic Kidney Disease",
+            "Type 2 Diabetes Mellitus",
+            "Atrial Fibrillation"
+          ]
+        },
+        "D2": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "matched": [
+            {
+              "pred": "Type 2 Diabetes Mellitus",
+              "gold": "t2dm"
+            },
+            {
+              "pred": "Coronary Artery Disease post Coronary Artery Bypass Graft",
+              "gold": "cad"
+            },
+            {
+              "pred": "Coronary Artery Disease post Coronary Artery Bypass Graft",
+              "gold": "post_cabg"
+            },
+            {
+              "pred": "Hypertension",
+              "gold": "hypertension"
+            }
+          ],
+          "unmatched_preds": [],
+          "missed_gold": [],
+          "critical_flags": [],
+          "parsed_conditions": [
+            "Type 2 Diabetes Mellitus",
+            "Coronary Artery Disease post Coronary Artery Bypass Graft",
+            "Hypertension"
+          ]
+        },
+        "D3": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "matched": [
+            {
+              "pred": "Diabetes Mellitus Type 2",
+              "gold": "t2dm"
+            },
+            {
+              "pred": "Coryza",
+              "gold": "coryza"
+            },
+            {
+              "pred": "Hyperlipidemia",
+              "gold": "hyperlipidemia"
+            }
+          ],
+          "unmatched_preds": [],
+          "missed_gold": [],
+          "critical_flags": [],
+          "parsed_conditions": [
+            "Diabetes Mellitus Type 2",
+            "Coryza",
+            "Hyperlipidemia"
+          ]
+        }
+      },
+      "macro_f1": 1.0,
+      "critical_flag_count": 0
+    },
+    "groq_llama-3.3-70b-versatile": {
+      "items": {
+        "D1": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "matched": [
+            {
+              "pred": "Hypertension",
+              "gold": "hypertension"
+            },
+            {
+              "pred": "Pacemaker Implanted",
+              "gold": "pacemaker_implanted"
+            },
+            {
+              "pred": "Benign Prostatic Hyperplasia",
+              "gold": "bph"
+            },
+            {
+              "pred": "Chronic Kidney Disease",
+              "gold": "ckd"
+            },
+            {
+              "pred": "Type 2 Diabetes Mellitus",
+              "gold": "t2dm"
+            },
+            {
+              "pred": "Atrial Fibrillation",
+              "gold": "atrial_fibrillation"
+            }
+          ],
+          "unmatched_preds": [],
+          "missed_gold": [],
+          "critical_flags": [],
+          "parsed_conditions": [
+            "Hypertension",
+            "Pacemaker Implanted",
+            "Benign Prostatic Hyperplasia",
+            "Chronic Kidney Disease",
+            "Type 2 Diabetes Mellitus",
+            "Atrial Fibrillation"
+          ]
+        },
+        "D2": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571,
+          "matched": [
+            {
+              "pred": "Type 2 Diabetes Mellitus",
+              "gold": "t2dm"
+            },
+            {
+              "pred": "Coronary Artery Disease",
+              "gold": "cad"
+            },
+            {
+              "pred": "Hypertension",
+              "gold": "hypertension"
+            }
+          ],
+          "unmatched_preds": [],
+          "missed_gold": [
+            "post_cabg"
+          ],
+          "critical_flags": [],
+          "parsed_conditions": [
+            "Type 2 Diabetes Mellitus",
+            "Coronary Artery Disease",
+            "Hypertension"
+          ]
+        },
+        "D3": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "matched": [
+            {
+              "pred": "Diabetes Mellitus Type 2",
+              "gold": "t2dm"
+            },
+            {
+              "pred": "Common Cold",
+              "gold": "coryza"
+            },
+            {
+              "pred": "Hyperlipidemia",
+              "gold": "hyperlipidemia"
+            }
+          ],
+          "unmatched_preds": [],
+          "missed_gold": [],
+          "critical_flags": [],
+          "parsed_conditions": [
+            "Diabetes Mellitus Type 2",
+            "Common Cold",
+            "Hyperlipidemia"
+          ]
+        }
+      },
+      "macro_f1": 0.9524,
+      "critical_flag_count": 0
+    },
+    "zai_glm-5.1": {
+      "items": {
+        "D1": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "matched": [
+            {
+              "pred": "hypertension",
+              "gold": "hypertension"
+            },
+            {
+              "pred": "pacemaker implanted",
+              "gold": "pacemaker_implanted"
+            },
+            {
+              "pred": "benign prostatic hyperplasia",
+              "gold": "bph"
+            },
+            {
+              "pred": "chronic kidney disease",
+              "gold": "ckd"
+            },
+            {
+              "pred": "type 2 diabetes mellitus",
+              "gold": "t2dm"
+            },
+            {
+              "pred": "atrial fibrillation",
+              "gold": "atrial_fibrillation"
+            }
+          ],
+          "unmatched_preds": [],
+          "missed_gold": [],
+          "critical_flags": [],
+          "parsed_conditions": [
+            "hypertension",
+            "pacemaker implanted",
+            "benign prostatic hyperplasia",
+            "chronic kidney disease",
+            "type 2 diabetes mellitus",
+            "atrial fibrillation"
+          ]
+        },
+        "D2": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "matched": [
+            {
+              "pred": "type 2 diabetes mellitus",
+              "gold": "t2dm"
+            },
+            {
+              "pred": "coronary artery disease post coronary artery bypass graft",
+              "gold": "cad"
+            },
+            {
+              "pred": "coronary artery disease post coronary artery bypass graft",
+              "gold": "post_cabg"
+            },
+            {
+              "pred": "hypertension",
+              "gold": "hypertension"
+            }
+          ],
+          "unmatched_preds": [],
+          "missed_gold": [],
+          "critical_flags": [],
+          "parsed_conditions": [
+            "type 2 diabetes mellitus",
+            "coronary artery disease post coronary artery bypass graft",
+            "hypertension"
+          ]
+        },
+        "D3": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "matched": [
+            {
+              "pred": "Type 2 Diabetes Mellitus",
+              "gold": "t2dm"
+            },
+            {
+              "pred": "Coryza",
+              "gold": "coryza"
+            },
+            {
+              "pred": "Hyperlipidemia",
+              "gold": "hyperlipidemia"
+            }
+          ],
+          "unmatched_preds": [],
+          "missed_gold": [],
+          "critical_flags": [],
+          "parsed_conditions": [
+            "Type 2 Diabetes Mellitus",
+            "Coryza",
+            "Hyperlipidemia"
+          ]
+        }
+      },
+      "macro_f1": 1.0,
+      "critical_flag_count": 0
+    }
+  }
+}
