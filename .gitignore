@@ -1,0 +1,64 @@
+
+# Entire local folder (patient JSON, PDF, field dictionary, notes)
+doc/
+doc/**
+
+# Patient / clinical data (anywhere, any name variant)
+patients_sample*.json
+**/patients_sample*.json
+*patient*sample*.json
+key_definitions*.csv
+**/key_definitions*.csv
+data/
+**/data/
+
+# Assignment materials if left outside doc/
+ML_Researcher_Benchmark_Assignment*.pdf
+**/ML_Researcher_Benchmark_Assignment*.pdf
+ml-research.txt
+**/ml-research.txt
+
+# Secrets / API keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+**/secrets.*
+**/service-account*.json
+
+# =============================================================================
+# Tooling / junk
+# =============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Scratch / temp
+_audit_tmp.py
+*.tmp
+*.temp
+*.log
+*.bak
+*~
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+*.swp
+*.swo
